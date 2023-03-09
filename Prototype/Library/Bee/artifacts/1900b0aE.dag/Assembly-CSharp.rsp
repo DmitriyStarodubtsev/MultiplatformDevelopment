@@ -347,6 +347,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scenes/Movement/FPSInput.cs"
 "Assets/Scenes/Movement/MouseLook.cs"
+"Assets/Scenes/Movement/RayShooter.cs"
 -langversion:9.0
 
 /deterministic
