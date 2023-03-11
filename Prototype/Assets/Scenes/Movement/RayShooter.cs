@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 public class RayShooter : MonoBehaviour
 {
     private Camera _camera;
@@ -19,7 +20,13 @@ public class RayShooter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                StartCoroutine(SphereIndicator(hit.point)); // Запуск Сопрограммы в ответ на попадание
+                GameObject hitObject = hit.transform.gameObject; // Запуск Сопрограммы в ответ на попадание
+                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                 if(target != null){
+                    target.ReactToHit();
+                 } else {
+                    StartCoroutine(SphereIndicator(hit.point));
+                 }
             }
         }
     }

@@ -348,6 +348,9 @@
 "Assets/Scenes/Movement/FPSInput.cs"
 "Assets/Scenes/Movement/MouseLook.cs"
 "Assets/Scenes/Movement/RayShooter.cs"
+"Assets/Scenes/Movement/ReactiveTarget.cs"
+"Assets/Scenes/Movement/SceneController.cs"
+"Assets/Scenes/Movement/WanderingAI.cs"
 -langversion:9.0
 
 /deterministic

@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scenes\Movement\MouseLook.cs" />
-    <Compile Include="Assets\Scenes\Movement\FPSInput.cs" />
     <Compile Include="Assets\Scenes\Movement\RayShooter.cs" />
+    <Compile Include="Assets\Scenes\Movement\FPSInput.cs" />
+    <Compile Include="Assets\Scenes\Movement\ReactiveTarget.cs" />
+    <Compile Include="Assets\Scenes\Movement\WanderingAI.cs" />
+    <Compile Include="Assets\Scenes\Movement\SceneController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
