@@ -16,12 +16,11 @@ public class SceneController : MonoBehaviour
 
     void Update()
     {
-        if(_enemy == null){//Порождает нового врага, только если в сцене отсутствуют враги 
-            _enemy = Instantiate(enemyPrefab) as GameObject;//Метод, копирующий объект-шаблон
-            _enemy.transform.position = new UnityEngine.Vector3(0,1,0);
-
-            float angle = Random.Range(0,360);
-            _enemy.transform.Rotate(0,angle,0);
+        if (_enemy == null) {
+        _enemy = Instantiate(enemyPrefab) as GameObject;
+        _enemy.transform.position = new UnityEngine.Vector3(0, 1, 0);
+        float angle = Random.Range(0, 360);
+        _enemy.transform.Rotate(0, angle, 0);
         }
     }
 }

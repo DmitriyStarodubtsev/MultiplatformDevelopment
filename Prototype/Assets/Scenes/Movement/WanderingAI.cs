@@ -7,17 +7,15 @@ using UnityEngine;
 
 public class WanderingAI : MonoBehaviour
 {
+    [SerializeField] private GameObject fireballPrefab;//Сериализованная переменная для связи  с объектом-шаблоном
+    private GameObject _fireball;//Закрытая перемменная для слежения за экземпляром врага в сцене 
     public float speed = 3;
     public float obstacleRange = 5.0f;
-
-    private bool _alive;
-    // Start is called before the first frame update
+    private bool _alive;  
     void Start()
     { 
         _alive = true;
-    }
-
-    // Update is called once per frame
+    }  
     void Update()
     {
         if(_alive){
@@ -28,7 +26,16 @@ public class WanderingAI : MonoBehaviour
      Ray ray = new Ray(transform.position, transform.forward);
      RaycastHit hit;
      if(Physics.SphereCast(ray,0.75f,out hit)){
-        if(hit.distance < obstacleRange){
+        GameObject hitObject = hit.transform.gameObject;
+        if(hitObject.GetComponent<PlayerCharacter>()){
+            if(_fireball == null){
+                _fireball = Instantiate(fireballPrefab) as GameObject;
+                _fireball.transform.position = 
+                transform.TransformPoint(Vector3.forward * 1.5f);
+                _fireball.transform.rotation =transform.rotation;
+            }
+        }
+        else if(hit.distance < obstacleRange){
             float angle = UnityEngine.Random.Range(-100,100); 
             transform.Rotate(0, angle,0);
         }
